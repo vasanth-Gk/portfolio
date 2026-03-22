@@ -1,0 +1,418 @@
+/* ===============================
+   GOOGLE FONT
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* ===============================
+   GLOBAL RESET
+================================ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #020617;
+    color: white;
+}
+/* ===============================
+   ONE-TIME NAME TYPING
+================================ */
+.typing-name{
+    font-size: 40px;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #00f7ff;
+    animation: typingOnce 3s steps(30) forwards, blink 0.7s 3;
+    text-shadow: 0 0 10px #00f7ff;
+}
+
+/* Typing only once */
+@keyframes typingOnce{
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Cursor blink stops after few times */
+@keyframes blink{
+    50% { border-color: transparent; }
+}
+.typing-name {
+    animation: typingOnce 3s steps(35) forwards;
+    border-right: none;
+}
+
+/* ===============================
+   SCROLL PROGRESS BAR
+================================ */
+#progress-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: #00f7ff;
+    z-index: 9999;
+}
+
+/* ===============================
+   BACKGROUND EFFECT
+================================ */
+.aurora-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.aurora-bg span{
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(0,247,255,0.3), transparent);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: move 10s infinite alternate;
+}
+
+@keyframes move{
+    100%{transform: translate(100px,-100px);}
+}
+
+.lines{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 50px,
+        rgba(0,247,255,0.05) 51px
+    );
+    z-index: -1;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+.logo{
+    font-size: 28px;
+    color: #00f7ff;
+}
+
+nav a{
+    margin-left: 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: #00f7ff;
+}
+
+/* ===============================
+   SECTION
+================================ */
+section{
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ===============================
+   HOME
+================================ */
+.home{
+    align-items: center;
+}
+
+.home-content{
+    max-width: 600px;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.glow-text{
+    color: #00f7ff;
+}
+
+/* NAME */
+.typing-name{
+    font-size: 40px;
+    text-shadow: 0 0 10px #00f7ff;
+}
+
+/* ROLE ANIMATION */
+.typing-role span::before{
+    content: "AI Student";
+    animation: roles 8s infinite;
+    color: #00f7ff;
+}
+
+@keyframes roles{
+    0%{content:"AI Student";}
+    33%{content:"Data Analyzer";}
+    66%{content:"Mechanical Designer";}
+}
+
+.typing-role span::after{
+    content: "|";
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+/* ===============================
+   SOCIAL
+================================ */
+.social-icons{
+    margin: 15px 0;
+}
+
+.social-icons a{
+    margin-right: 15px;
+    font-size: 22px;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-icons a:hover{
+    color: #00f7ff;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.btn{
+    padding: 10px 25px;
+    border: 2px solid #00f7ff;
+    border-radius: 30px;
+    color: #00f7ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background: #00f7ff;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ===============================
+   ABOUT
+================================ */
+.about{
+    align-items: center;
+}
+
+.section-title{
+    text-align: center;
+    margin-bottom: 40px;
+    color: #00f7ff;
+}
+
+.about-container{
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-img img{
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 40px #00f7ff;
+}
+
+.about-content{
+    max-width: 500px;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* ===============================
+   SKILLS
+================================ */
+.skills-wrapper{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skills-box{
+    width: 400px;
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.skill{
+    margin-bottom: 20px;
+}
+
+.progress{
+    background: #111;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.progress-bar{
+    height: 100%;
+    background: #00f7ff;
+}
+
+.html{width:90%;}
+.css{width:85%;}
+.python{width:80%;}
+
+/* ===============================
+   PROJECTS
+================================ */
+.project-container{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-card{
+    width: 320px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.project-card i{
+    font-size: 40px;
+    color: #00f7ff;
+    margin-bottom: 15px;
+}
+
+.project-card p{
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.project-buttons{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.project-buttons a{
+    position: relative;
+    z-index: 10;
+}
+
+.project-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+/* ===============================
+   CONTACT
+================================ */
+.contact{
+    text-align: center;
+}
+
+.contact-container{
+    max-width: 600px;
+    margin: auto;
+    padding: 25px;
+    border: 2px solid rgba(0,247,255,0.3);
+    border-radius: 20px;
+}
+
+.contact-container:hover{
+    box-shadow: 0 0 25px #00f7ff;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group{
+    display: flex;
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #00f7ff;
+    background: transparent;
+    color: white;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    box-shadow: 0 0 10px #00f7ff;
+}
+
+/* ===============================
+   FADE ANIMATION
+================================ */
+.fade-in{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn{
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media(max-width:768px){
+    header{
+        padding:20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section{
+        padding:20px;
+    }
+
+    .about-container,
+    .skills-wrapper,
+    .project-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
